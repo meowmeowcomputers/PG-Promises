@@ -83,6 +83,8 @@ function addArtist() {
     var statement = "INSERT INTO artist (id, name) \
     VALUES (default, ${name})"
     db.result(statement, res);
+  })
+  .then(function () {
     console.log(`Created album called ${res.name} with album ID `);
     prompt.finish();
     pgp.end();
